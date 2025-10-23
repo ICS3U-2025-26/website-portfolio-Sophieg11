@@ -1,0 +1,1 @@
+Used this site to align text in my tables: https://www.w3schools.com/css/css_table_align.asp

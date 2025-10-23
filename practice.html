@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parallax Scroll Hero </title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing:border-box;
+            }
+
+            body,html {
+                height: 100%;
+                font-family: Arial,sans-serif;
+                color: white;
+                overflow-x:hidden;
+            }
+
+            .hero {
+                position:relative;
+                height: 100vh;
+                background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+            
+            }
+
+            .text-box {
+                background-color: rgba(0,0,0,0.5);
+                padding:2rem 3rem;
+                border-radius: 12px;
+                text-align: center;
+                border:1px solid rgba (225,225,225,0.2);
+                backdrop-filter: blur (6px);
+                transform: translateY(100%);
+                opacity: 0;
+                transition: transfrom 1s ease-out, opacity 1s ease-out;
+            }
+
+            .text-box.visible {
+                transfrom:translateY(0);
+                opacity: 1;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                max-width: 600px;
+            }
+
+            .content {
+                height: 150vh;
+                background-color: #111;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+
+        <section class="hero">
+            <div class="text-box">
+            <h1> Sophie Goldman</h1>
+            <h2> Computer Science Portfolio</h2>
+            <p> 2025-2026</p>
+            </div>
+        </section>
+
+        <section class="content">
+        Scroll to see the parallax effect in action.
+        </section>
+
+        <script>
+            window.addEventListener('scroll', () => {
+                const textBox = document.querySelector ('.text-box');
+                const triggerPoint = window.innerHeight * 0.2;
+                if (window.scrollY > triggerPoint) {
+                    
+                }
+            }
+        </script>
+
+
+    </body>
+</html>
