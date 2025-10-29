@@ -1,2 +1,3 @@
 Used this site to align text in my tables: https://www.w3schools.com/css/css_table_align.asp
 Used ChatGPT to make the scroll effect of the title (and struggled with it A LOT): https://chatgpt.com/share/68fa49b9-1ee0-800c-ae69-067c542f2391
+Used this site to make the nav bar: https://www.w3schools.com/howto/howto_js_sidenav.asp
