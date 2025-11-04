@@ -37,9 +37,10 @@
       margin-left: 50px;
     }
 
-    span{
-
+   span{
       font-size: 30px;
+      color:#e75480;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     h1{
@@ -68,13 +69,13 @@
 
     }
     table{
-      border: 4px solid #e75480;
+      border: 1px solid white;
       width: 75%;
       border-collapse: collapse;
     }
 
     td{
-      border: 2px solid #e75480;
+      border: 1px solid white;
       padding: 8px;
     }
 
@@ -86,7 +87,55 @@
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       color:rgb(162, 37, 56);
       font-size: 18px;
+  
     }
+     .submenu-container {
+    display: block;
+  }
+
+  /* Make the toggle look like other links */
+  .submenu-toggle {
+    display: block;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #e75480;
+    cursor: pointer;
+  }
+
+  .submenu-toggle:hover { color: #ca446c; }
+
+  /* pseudo arrow: will replace the manual arrow character */
+  .submenu-toggle::after {
+    content: "▸";
+    float: right;
+    transition: transform 0.2s;
+  }
+
+  /* submenu hidden by default */
+  .sidenav .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 50px;
+    margin: 0;
+  }
+
+  .sidenav .submenu li a {
+    font-size: 20px;
+    padding: 6px 8px;
+    color: #e75480;
+  }
+
+  /* When container has .active show submenu and rotate arrow */
+  .submenu-container.active .submenu {
+    display: block;
+  }
+
+  .submenu-container.active .submenu-toggle::after {
+    transform: rotate(90deg);
+  }
+
+
 
 
   
@@ -104,12 +153,29 @@
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0"
     }
+    document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".submenu-toggle").forEach(toggle => {
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();           // don't navigate
+        const container = toggle.parentElement; // .submenu-container
+        container.classList.toggle("active");
+      });
+    });
+  });
         </script>
-          <div id="mySidenav" class="sidenav">
+         <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.html">Home</a>
     <a href="about.html">About Me</a>
-    <a href="projects.html"> My Projects</a>
+    <div class="submenu-container">
+    <a href="projects.html" class="submenu-toggle"> My Projects</a>
+    <ul class="submenu">
+      <li><a href="unit1.html"> Unit 1</a></li>
+      <li><a href="unit2.html"> Unit 2</a></li>
+      <li><a href="unit3.html"> Unit 3</a></li>
+      <li><a href="unit4.html"> Unit 4</a></li>
+    </ul>
+    </div>
     <a href="resources.html"> Resources</a>
     <a href="gaming.html"> Gaming Corner</a>
   </div>
@@ -123,34 +189,34 @@
     <p> This initial unit focuses on the foundational skills used all throughout the Grade 11 Computer Science Course.</p>
 
     <table>
-      <tr>
+      <tr style="background-color: white;">
         <td><b>Project Name</b></td>
         <td><b>Date </b></td>
         <td><b>Project Link</b></td>
       </tr>
 
       <tr>
-        <td>Introduction to Programming</td>
-          <td> September 5th-9th, 2025</td>
+        <td style="background-color:#ffe2e6;">Introduction to Programming</td>
+          <td style="background-color:#ffe2e6;"> September 5th-9th, 2025</td>
       </tr>
       
       <tr>
-        <td>PC Build</td>
-        <td>September 11th, 2025</td>
+        <td style="background-color:#ffe2e6;" >PC Build</td>
+        <td style="background-color:#ffe2e6;">September 11th, 2025</td>
       </tr>
 
       <tr>
-        <td>
+        <td style="background-color:#ffe2e6;">
           PB & J Sandwich Pseudocode
         </td>
-        <td>September 23rd, 2025</td>
+        <td style="background-color:#ffe2e6;">September 23rd, 2025</td>
       </tr>
 
       <tr>
-        <td>
+        <td style="background-color:#ffe2e6;">
           Implenting Algorithms
         </td>
-        <td>September 23rd, 2025</td>
+        <td style="background-color:#ffe2e6;">September 23rd, 2025</td>
       </tr>
     </table>
    
@@ -162,19 +228,19 @@
     </p>
 
     <table>
-      <tr>
+      <tr style="background-color: white;">
         <td><b> Project Name</b></td>
         <td><b> Date</b></td>
         <td><b>Project Link</b></td>
       </tr>
 
       <tr>
-        <td>Popup Boxes Quiz</td>
-        <td>October 9th, 2025</td>
+        <td style="background-color:#ffe2e6;">Popup Boxes Quiz</td>
+        <td style="background-color:#ffe2e6;">October 9th, 2025</td>
       </tr>
       <tr>
-        <td>Website Porfolio</td>
-        <td>October 17th - November 11th, 2025</td>
+        <td style="background-color:#ffe2e6;">Website Porfolio</td>
+        <td style="background-color:#ffe2e6;"> October 17th - November 11th, 2025</td>
       </tr>
     </table>
     <p>
@@ -184,7 +250,7 @@
     </p>
 
     <table>
-      <tr>
+      <tr style="background-color: white;">
         <td><b> Project Name</b></td>
         <td><b> Date</b></td>
         <td><b>Project Link</b></td>
@@ -198,7 +264,7 @@
     </p>
 
     <table>
-      <tr>
+      <tr style="background-color: white;">
         <td><b> Project Name</b></td>
         <td><b> Date</b></td>
         <td><b>Project Link</b></td>
