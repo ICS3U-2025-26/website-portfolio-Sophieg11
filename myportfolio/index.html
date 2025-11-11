@@ -72,6 +72,7 @@
 
     body {
       background-color: #ffeff1;
+    
     }
 
     h1 {
@@ -125,53 +126,77 @@
       text-align: center;
       padding: 20px;
     }
+/* Submenu container */
+.submenu-container {
+  padding-left: 32px;
+}
 
-    .submenu-container {
-    display: block;
-  }
+/* Header row (link + arrow) */
+.submenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  /* Make the toggle look like other links */
-  .submenu-toggle {
-    display: block;
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
+/* My Projects main link */
+.submenu-main {
+  font-size: 25px;
+  color: #e75480;
+  text-decoration: none;
+  flex: 1;
+  padding: 8px 0;
+}
+
+/* Arrow button */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #e75480;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.submenu-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.submenu-container.active .submenu-toggle::before {
+  transform: rotate(90deg);
+}
+
+/* Submenu links */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.submenu-container.active .submenu {
+  display: block;
+}
+
+  p {
+    color: #e75480;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
-    color: #e75480;
-    cursor: pointer;
+   
   }
-
-  .submenu-toggle:hover { color: #ca446c; }
-
-  /* pseudo arrow: will replace the manual arrow character */
-  .submenu-toggle::after {
-    content: "▸";
-    float: right;
-    transition: transform 0.2s;
-  }
-
-  /* submenu hidden by default */
-  .sidenav .submenu {
-    display: none;
-    list-style: none;
-    padding-left: 50px;
-    margin: 0;
-  }
-
-  .sidenav .submenu li a {
-    font-size: 20px;
-    padding: 6px 8px;
-    color: #e75480;
-  }
-
-  /* When container has .active show submenu and rotate arrow */
-  .submenu-container.active .submenu {
-    display: block;
-  }
-
-  .submenu-container.active .submenu-toggle::after {
-    transform: rotate(90deg);
-  }
-
+h2 { color: #e75480;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 40px;
+      text-align: center;
+      
+}
+img{
+  display: block;
+  margin: auto;
+  width: 80%;
+}
   
 
    
@@ -215,34 +240,39 @@
       document.getElementById("mySidenav").style.width = "0"
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".submenu-toggle").forEach(toggle => {
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();           // don't navigate
-        const container = toggle.parentElement; // .submenu-container
-        container.classList.toggle("active");
-      });
+// Toggle submenu when arrow is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger parent link
+      const container = btn.closest(".submenu-container");
+      container.classList.toggle("active");
     });
   });
-
+});
   </script>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <div class="submenu-container">
-    <a href="projects.html" class="submenu-toggle"> My Projects</a>
-    <ul class="submenu">
-      <li><a href="unit1.html"> Unit 1</a></li>
-      <li><a href="unit2.html"> Unit 2</a></li>
-      <li><a href="unit3.html"> Unit 3</a></li>
-      <li><a href="unit4.html"> Unit 4</a></li>
-    </ul>
-    </div>
-    <a href="resources.html"> Resources</a>
-    <a href="gaming.html"> Gaming Corner</a>
+  <!-- My Projects link with separate arrow -->
+<div class="submenu-container">
+  <div class="submenu-header">
+    <a href="projects.html" class="submenu-main">My Projects</a>
+    <button class="submenu-toggle" aria-label="Toggle submenu"></button>
   </div>
+  <ul class="submenu">
+    <li><a href="unit1.html">Unit 1</a></li>
+    <li><a href="unit2.html">Unit 2</a></li>
+    <li><a href="unit3.html">Unit 3</a></li>
+    <li><a href="unit4.html">Unit 4</a></li>
+  </ul>
+</div>
+
+  <a href="resources.html">Resources</a>
+  <a href="gaming.html">Gaming Corner</a>
+</div>
 
   <span onclick="openNav()">☰ Menu</span>
 
@@ -250,13 +280,19 @@
 
   
   <h1> Home Page</h1>
-
-         <img src="camp.JPG" width= 25% alt="A picture of me and my cabin at camp, my favourite place.">
-         <img src="IMG_4717.JPG" width="32%" alt="A picture of a sunset ">
         
          <p>
-             Welcome! This site is a collection of all my work done over the course of the 2025-2026 school year in the grade 11 Computer Science class. Here, you can learn more about me, the projects I've worked on this year as well as a peak into my process. There's even a gaming corner where you can try out all the games I've created! 
+             Welcome! This site is a collection of all the work I've done over the course of the 2025-2026 school year in the grade 11 Computer Science class. Here, you can learn more about me, the projects I've worked on this year as well as an insight into my process. There's even a gaming corner where you can try out all the games I've created! 
              </p>
+
+             <h2>
+              Project Highlight, October
+             </h2>
+             <p>
+              The project I've chosen to highlight from October is this site! On the unit 2 page I go into more detail about the process, but, here are some highlights. 
+             </p>
+             <img src="Screenshot 2025-11-10 at 1.19.03 PM.jpg" alt="A screenshot of the code involved in the header of this page">
+             <p> This code creates the scroll affect at the top of this page, this was the most difficult aspect of this site to create.</p>
 
                </section>
        </body>
