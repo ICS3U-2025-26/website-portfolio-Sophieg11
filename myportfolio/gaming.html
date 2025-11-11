@@ -43,50 +43,59 @@
       color:#e75480;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
-     .submenu-container {
-    display: block;
-  }
+     /* Submenu container */
+.submenu-container {
+  padding-left: 32px;
+}
 
-  /* Make the toggle look like other links */
-  .submenu-toggle {
-    display: block;
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #e75480;
-    cursor: pointer;
-  }
+/* Header row (link + arrow) */
+.submenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .submenu-toggle:hover { color: #ca446c; }
+/* My Projects main link */
+.submenu-main {
+  font-size: 25px;
+  color: #e75480;
+  text-decoration: none;
+  flex: 1;
+  padding: 8px 0;
+}
 
-  /* pseudo arrow: will replace the manual arrow character */
-  .submenu-toggle::after {
-    content: "▸";
-    float: right;
-    transition: transform 0.2s;
-  }
+/* Arrow button */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #e75480;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
 
-  /* submenu hidden by default */
-  .sidenav .submenu {
-    display: none;
-    list-style: none;
-    padding-left: 50px;
-    margin: 0;
-  }
+.submenu-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
 
-  .sidenav .submenu li a {
-    font-size: 20px;
-    padding: 6px 8px;
-    color: #e75480;
-  }
+.submenu-container.active .submenu-toggle::before {
+  transform: rotate(90deg);
+}
 
-  /* When container has .active show submenu and rotate arrow */
-  .submenu-container.active .submenu {
-    display: block;
-  }
+/* Submenu links */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
 
-  .submenu-container.active .submenu-toggle::after {
-    transform: rotate(90deg);
+.submenu-container.active .submenu {
+  display: block;
+}
   }
 
         </style>
@@ -101,32 +110,39 @@
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0"
     }
-    document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".submenu-toggle").forEach(toggle => {
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();           // don't navigate
-        const container = toggle.parentElement; // .submenu-container
-        container.classList.toggle("active");
-      });
+    // Toggle submenu when arrow is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger parent link
+      const container = btn.closest(".submenu-container");
+      container.classList.toggle("active");
     });
   });
+});
         </script>
         <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <div class="submenu-container">
-    <a href="projects.html" class="submenu-toggle"> My Projects</a>
-    <ul class="submenu">
-      <li><a href="unit1.html"> Unit 1</a></li>
-      <li><a href="unit2.html"> Unit 2</a></li>
-      <li><a href="unit3.html"> Unit 3</a></li>
-      <li><a href="unit4.html"> Unit 4</a></li>
-    </ul>
-    </div>
-    <a href="resources.html"> Resources</a>
-    <a href="gaming.html"> Gaming Corner</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+
+  <!-- My Projects link with separate arrow -->
+<div class="submenu-container">
+  <div class="submenu-header">
+    <a href="projects.html" class="submenu-main">My Projects</a>
+    <button class="submenu-toggle" aria-label="Toggle submenu"></button>
   </div>
+  <ul class="submenu">
+    <li><a href="unit1.html">Unit 1</a></li>
+    <li><a href="unit2.html">Unit 2</a></li>
+    <li><a href="unit3.html">Unit 3</a></li>
+    <li><a href="unit4.html">Unit 4</a></li>
+  </ul>
+</div>
+
+  <a href="resources.html">Resources</a>
+  <a href="gaming.html">Gaming Corner</a>
+</div>
 
   <span onclick="openNav()">☰ Menu</span>
 
