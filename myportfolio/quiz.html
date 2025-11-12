@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Quiz</title>
+  <style>
+    h1{
+      font-size: 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: #ca446c;
+    }
+  </style>
+  <script>
+    function startQuiz() {
+      let score = 0;
+      let totalQuestions = 5;
+
+      // True/False Questions
+      if (confirm("1. The Earth orbits around the Sun.")) { // True
+        alert("Correct!");
+        score++;
+      } else {
+        alert("Wrong!");
+      }
+
+      if (confirm("2. JavaScript is the same as Java.")) { // False
+        alert("Wrong!");
+      } else {
+        alert("Correct!");
+        score++;
+      }
+
+      if (confirm("3. The capital of France is Berlin.")) { // False
+        alert("Wrong!");
+      } else {
+        alert("Correct!");
+        score++;
+      }
+
+      // Input Questions
+      let q4 = prompt("4. What is 5 + 3?");
+      if (q4 == "8") {
+        alert("Correct!");
+        score++;
+      } else {
+        alert("Wrong! The correct answer is 8.");
+      }
+
+      let q5 = prompt("5. What language is used to style web pages?");
+      if (q5.toLowerCase() === "css") {
+        alert("Correct!");
+        score++;
+      } else {
+        alert("Wrong! The correct answer is CSS.");
+      }
+
+      // Final Score
+      alert("You got " + score + "/" + totalQuestions + " correct!");
+    }
+  </script>
+</head>
+<body>
+  <h1><em>Simple JavaScript Quiz</em></h1>
+  <button onclick="startQuiz()">Start Quiz</button>
+</body>
+</html>
