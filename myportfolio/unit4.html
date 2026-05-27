@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title>Unit 4</title>
+        
+        <style>
+            .sidenav {
+      height:100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      background-color:pink;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #e75480;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #ca446c
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    span{
+      font-size: 30px;
+      color:#e75480;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+     /* Submenu container */
+.submenu-container {
+  padding-left: 32px;
+}
+
+/* Header row (link + arrow) */
+.submenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* My Projects main link */
+.submenu-main {
+  font-size: 25px;
+  color: #e75480;
+  text-decoration: none;
+  flex: 1;
+  padding: 8px 0;
+}
+
+/* Arrow button */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #e75480;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.submenu-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.submenu-container.active .submenu-toggle::before {
+  transform: rotate(90deg);
+}
+
+/* Submenu links */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.submenu-container.active .submenu {
+  display: block;
+}
+
+
+h1{
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+}
+
+h2{
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+}
+h3{
+  font-size: 28px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+  text-align: center;
+}
+p{
+  font-size: 23px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+  text-align: center;
+}
+ body{
+      background-color: #fff0f3;
+    }
+
+        </style>
+    </head>
+    <body>
+
+        <script>
+            function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0"
+    }
+   // Toggle submenu when arrow is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger parent link
+      const container = btn.closest(".submenu-container");
+      container.classList.toggle("active");
+    });
+  });
+});
+        </script>
+         <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+
+  <!-- My Projects link with separate arrow -->
+<div class="submenu-container">
+  <div class="submenu-header">
+    <a href="projects.html" class="submenu-main">My Projects</a>
+    <button class="submenu-toggle" aria-label="Toggle submenu"></button>
+  </div>
+  <ul class="submenu">
+    <li><a href="unit1.html">Unit 1</a></li>
+    <li><a href="unit2.html">Unit 2</a></li>
+    <li><a href="unit3.html">Unit 3</a></li>
+    <li><a href="unit4.html">Unit 4</a></li>
+  </ul>
+</div>
+
+  <a href="resources.html">Resources</a>
+  <a href="gaming.html">Gaming Corner</a>
+</div>
+  <span onclick="openNav()">☰ Menu</span>
+
+  <h1>Unit 4 - Animations and Game Development</h1>
+
+  <h2>Milestone Tasks</h2>
+  <p> Below is my copyable code from three milestone tasks completed during the unit.</p> 
+  
+  <h3> Lesson 1</h3>
+  <p> // This setup function is called once when the program starts.
+function setup() { <br>
+ createCanvas(400, 400); // Create a canvas of width 400 pixels and height 400 pixels.<br>
+}<br><br>
+
+
+// The draw fucntion runs 60 times per second <br>
+function draw() {<br>
+ background(220); // clears the screen with a light grey background<br><br>
+
+
+ //Draw a red circle<br>
+ fill(255,0,0);<br>
+ ellipse(200,200,50,50);<br><br>
+
+
+ //Draw a blue rectangle<br>
+ fill(0,0,255);<br>
+ rect(mouseX-15,mouseY-15,30); // follows mouse, subtracting 15 makes it centred<br>
+}
+</p>
+
+<p> Here you can see the visuals of the code.</p>
+ <iframe src="milestones/milestone1.html" width="800" height="600" style="border:none;"></iframe>
+
+
+
+  <h3> Lesson 3</h3>
+  <p> /let radius = 25; //Size of the ball <br>
+let x = 200; //Horizontal position of the ball<br>
+let y = 200; //Vertical position of the ball<br>
+let xSpeed = 5; //Horizontal velocity of the ball<br>
+let ySpeed = 4; //Vertical velocity of the ball<br><br>
+
+
+//use variables to set the R, G, B for the project<br>
+let r = 0;<br>
+let g = 240;<br>
+let b = 255;<br><br>
+
+
+
+
+function setup() {<br>
+   //auto creates width = 400, height = 400<br>
+   createCanvas(400,400);<br>
+}<br><br>
+
+
+//draw() function is called 60x per second<br>
+function draw() {<br>
+   background(40); //dark grey background<br><br>
+
+
+   //set the color, draw the circle<br>
+   fill(r,g,b);<br>
+   noStroke(); //removes the black outline<br>
+   ellipse(x,y,radius*2); //no height means it's the same as width -- same as "circle(x,y,radius*2);"<br><br>
+  
+   x += xSpeed; //adds xSpeed to the x-coordinate of the ball<br>
+   y = y + ySpeed; //adds ySpeed to the y-coordinate of the ball<br><br>
+
+
+   //width & height constants are created automatically, so we can use them<br>
+   /* LOGIC:<br>
+       - if the x coordinate of the ball is greater than the width, then bounce back<br>
+       - but x > width doesn't bounce the ball early enough<br>
+           (the centre of the ball bounces off the wall rather than the edge of the ball)<br>
+       - which means the radius of the ball passes the right-boundary<br>
+       - we want to bounce 'radius' pixels earlier<br>
+       - so we check if x > width - radius<br>
+   */ //similar logic can be used for the left-boundary, and the y-values<br>
+   // use || for "OR" logic<br>
+   if (x > width - radius || x < radius) { //if either the ball bounces off the left or right wall<br>
+       xSpeed *= -1; //change the sign of xSpeed<br>
+   }<br>
+   if (y > height - radius || y < radius) {<br>
+       ySpeed *= -1;<br>
+   }<br><br>
+
+
+
+
+   // //MANUAL CLICK DETECTION: Check if the mouse was pressed on the ball.<br>
+   // if (mouseIsPressed) {<br>
+   //     //finds the distance from the mouse click to the centre of the circle<br>
+   //     let d = dist(mouseX, mouseY, x, y);<br><br>
+
+
+   //     //if the distance from the mouse is less than the radius, we are inside the circle<br>
+   //     if (d < radius) {<br>
+   //         r = random(255);<br>
+   //         g = random(255);<br>
+   //         b = random(255);<br>
+   //     }<br>
+   // }<br>
+}<br>
+
+
+//This function is BUILT-IN to p5.js<br>
+//It only runs ONCE per click.<br>
+function mousePressed() {<br>
+   if (mouseIsPressed) {<br>
+       //finds the distance from the mouse click to the centre of the circle<br>
+       let d = dist(mouseX, mouseY, x, y);<br><br>
+
+
+       //if the distance from the mouse is less than the radius, we are inside the circle<br>
+       if (d < radius) {<br>
+           r = random(255);<br>
+           g = random(255);<br>
+           b = random(255);<br>
+       }<br>
+   }<br>
+}<br>
+</p>
+
+<p> Here you can see the visuals of the code.</p>
+ <iframe src="milestones/milestone2.html" width="800" height="600" style="border:none;"></iframe>
+
+
+
+   <h3> Lesson 4</h3>
+  <p> function setup(){<br>
+// Creates a canvas that is 400 by 400<br>
+createCanvas(400,400);<br>
+translate(width/2,height/2);<br>
+fill(255,0,0);<br>
+textAlign(CENTER,CENTER);<br><br>
+
+
+for(let i = 0; i < 360; i+= 10) {<br>
+    rotate(radians(10));<br>
+    text("Fly, You Fools!",150,0);<br><br>
+
+}<br>
+  }
+</p>
+
+<p> Here you can see the visuals of the code.</p>
+ <iframe src="milestones/milestone3.html" width="800" height="600" style="border:none;"></iframe>
+
+
+
+
+
+  
+
+ <h2>Game Tutorial</h2>
+ <p> let cols = 10;<br>
+let rows = 10;<br>
+let cellSize = 40;<br>
+let grid = [];<br><br>
+
+
+function setup() {<br>
+   createCanvas(cols * cellSize, rows * cellSize);<br><br>
+
+
+   // stop the browser from showing a menu when we right click<br>
+   document.oncontextmenu = function() {return false; };<br><br>
+
+
+   for (let c = 0; c < cols; c++) {<br>
+       grid[c] = []; //make an empty array for this column<br>
+       for (let r = 0; r < rows; r++) {<br><br>
+
+
+           // 10% chance to be a mine<br>
+           let isMine = random(1) < 0.1;<br><br>
+
+
+           // save all the data for this specific cell<br>
+           grid [c][r] = {<br>
+               x: c * cellSize,<br>
+               y: r * cellSize,<br>
+               mine: isMine,<br>
+               revealed: false,<br>
+               flagged: false,<br>
+           };<br>
+       }<br>
+   }<br>
+}<br><br>
+
+
+function draw (){<br>
+   for (let c = 0; c < cols; c++) {<br>
+       for (let r = 0; r < rows; r++) {<br>
+           let cell = grid[c][r];<br>
+           stroke(0);<br><br>
+
+
+           if (cell.revealed === true) {<br>
+               if (cell.mine === true) {<br>
+                   fill(255, 0, 0); // red mine<br>
+               } else {<br>
+                   fill(200); // safe gray<br>
+               }<br>
+           } else {<br>
+               fill(150); // unrevealed dark gray<br>
+           }<br><br>
+          
+           rect(cell.x, cell.y, cellSize, cellSize);<br><br>
+       }<br>
+   }<br>
+}<br><br>
+
+
+function mousePressed() {<br>
+   //convert pixels to columns and rows<br>
+   let c = floor(mouseX / cellSize);<br>
+   let r = floor(mouseY / cellSize);<br><br>
+
+
+   //make sure they clicked inside the canvas<br>
+   if (c >= 0 && c < cols && r >= 0 && r < rows) {<br>
+       let clickedCell = grid[c][r];<br><br>
+
+
+       //check if they right clicked<br>
+       if (mouseButton === RIGHT) {<br>
+           if (clickedCell.revealed === false) {<br>
+               // flip the boolean: if it was false, make it true. If it was true, make false.<br>
+               clickedCell.flagged = !clickedCell.flagged;<br>
+           }<br>
+       }<br>
+       // check if they left clicked<br>
+       else if (mouseButton === LEFT) {<br>
+           if (clickedCell.flagged === false) {<br>
+               clickedCell.revealed = true;<br>
+           }<br>
+       }<br>
+   }<br>
+}<br>
+</p>
+
+<p> Here you can see the visuals of the code.</p>
+ <iframe src="games/gametut.html" width="800" height="600" style="border:none;"></iframe>
+
+
+<h2>Boxed In</h2>
+<p>This game was made using p5.js.</p> 
+
+  <p> 
+    // All of these statements set general settings that are consistent throughout levels<br><br>
+
+let state = "home";<br>
+let level = 1;<br><br>
+
+let player;<br>
+let crates = [];<br>
+let targets = [];<br>
+let walls = [];<br><br>
+
+let moves = 0;<br>
+let recommended = 0;<br>
+let stars = 0;<br><br>
+
+let t = 60;<br><br>
+
+// SETUP - creates the size of canvas and alignment for all text<br>
+function setup() {<br>
+  createCanvas(600, 600);<br>
+  textAlign(CENTER, CENTER);<br>
+}<br><br>
+
+// DRAW <br>
+// Draws different screens based on what game state the game is currently in<br>
+function draw() {<br>
+  background(20, 40, 80);<br><br>
+
+  if (state === "home") home();<br>
+  if (state === "how") how();<br>
+  if (state === "game") game();<br>
+  if (state === "win") win();<br>
+}<br><br>
+
+// SCREENS<br>
+// This function draws the homescreen<br>
+function home() {<br>
+  textSize(30);<br>
+  fill(255);<br>
+  textSize(48);<br>
+  text("Blocked In", 300, 150);<br><br>
+
+  textSize(28);<br>
+  button("PLAY", 300, 300, );<br>
+  button("HOW", 300, 380);<br>
+}<br>
+// This function draws the how to play screen<br>
+function how() {<br>
+  textSize(16);<br>
+  fill(255);<br>
+  text(<br>
+    "Use arrow keys to move.\nPush crates onto matching coloured targets.\nOnly pushes count as moves.",<br>
+    300, 250<br>
+  );<br>
+  button("BACK", 300, 450);<br>
+}<br>
+// This function draws the screen that displays user's score after each level<br>
+function win() {<br>
+  fill(255);<br>
+  textSize(25);<br>
+  text("Level Complete", 300, 200);<br>
+  text("Stars: " + "⭐".repeat(stars), 300, 260);<br>
+// The above line uses the variable stars, the code that determines the amount of stars is down below.<br>
+  if (level < 3) button("NEXT", 300, 350);<br>
+  button("HOME", 300, 430);<br>
+}<br><br>
+
+// GAME<br>
+// This function draws the screen that is constant for the entire game, regardless of levels<br>
+function game() {<br><br>
+  
+  // This draws the boundaries of the level<br>
+  for (let w of walls) rect(w.x*t, w.y*t, t, t);<br><br>
+
+  // This draws the target squares<br>
+  for (let tar of targets) {<br>
+    fill(tar.c);<br>
+    rect(tar.x*t, tar.y*t, t, t);<br>
+  }<br>
+// This draws the crates<br>
+  for (let c of crates) {<br>
+    fill(c.c);<br>
+    rect(c.x*t+10, c.y*t+10, t-20, t-20);<br>
+  }<br>
+// This draws the player<br>
+  fill(255,180,200);<br>
+  noStroke();<br>
+  ellipse(player.x*t+t/2, player.y*t+t/2, t*0.6);<br><br>
+
+  // These count moves and keeps track of recommended amount of moves. <br>
+  fill(255);<br>
+  textSize(14);<br>
+  text("Moves: "+moves, 90, 20);<br>
+  text("Rec: "+recommended, 210, 20);<br><br>
+
+  button("RESTART", 500, 30);<br><br>
+
+  //checkWin is established down below<br>
+  checkWin();<br><br>
+}
+
+//INPUT <br>
+function keyPressed() {<br>
+  // This connects key pressed to player movement, when in game state<br>
+  if (state !== "game") return;<br><br>
+
+  let dx=0, dy=0;<br>
+  if (keyCode===LEFT_ARROW) dx=-1;<br>
+  if (keyCode===RIGHT_ARROW) dx=1;<br>
+  if (keyCode===UP_ARROW) dy=-1;<br>
+  if (keyCode===DOWN_ARROW) dy=1;<br><br>
+
+  move(dx,dy);<br>
+}<br><br>
+
+// This controls button usage and state switches <br>
+function mousePressed() {<br>
+  if (state==="home") {<br>
+    if (over(300,300)) { level=1; loadLevel(); state="game"; }<br>
+    if (over(300,380)) state="how";<br>
+  }<br>
+  else if (state==="how") {<br>
+    if (over(300,450)) state="home";<br>
+  }<br>
+  else if (state==="win") {<br>
+    if (over(300,350) && level< 3) { level++; loadLevel(); state="game"; }<br>
+    if (over(300,430)) state="home";<br>
+  }<br>
+  else if (state==="game") {<br>
+    if (over(500,30)) loadLevel();<br>
+  }<br>
+}<br><br>
+
+// MOVEMENT <br>
+// This function is used to help define player movement and also set constraints for the player and crates<br>
+function move(dx,dy) {<br>
+  let nx = player.x+dx;<br>
+  let ny = player.y+dy;<br>
+// This uses the function hitWalls which is established below<br>
+  if (hitWall(nx,ny)) return;<br><br>
+
+  let crate = crateAt(nx,ny);<br>
+  if (crate) {<br>
+    let nx2 = crate.x+dx;<br>
+    let ny2 = crate.y+dy;<br>
+// It also uses crateAt which is also established below<br>
+    if (hitWall(nx2,ny2) || crateAt(nx2,ny2)) return;<br><br>
+
+    // This counts each push of a crate as a move<br>
+    crate.x = nx2;<br>
+    crate.y = ny2;<br>
+    moves++; <br>
+  }<br><br>
+
+  player.x = nx;<br>
+  player.y = ny;<br>
+}<br>
+// This constrains users within wall boundaries<br>
+function hitWall(x,y){<br>
+  return walls.some(w=>w.x===x&&w.y===y);<br>
+}<br>
+// This allows users to push crates<br>
+function crateAt(x,y){<br>
+  return crates.find(c=>c.x===x&&c.y===y);<br>
+}<br><br>
+
+// WIN <br>
+// This establishes when a level is over/ there is a crate on each target<br>
+function checkWin() {<br>
+  let done = true;<br><br>
+
+  for (let c of crates) {<br>
+    let match = targets.find(t=>t.x===c.x&&t.y===c.y&&t.c===c.c);<br>
+    if (!match) done=false;<br>
+  }<br>
+// This finds the amount of stars awareded based on move count<br>
+  if (done) {<br>
+    if (moves<=recommended) stars=3;<br>
+    else if (moves<=recommended+2) stars=2;<br>
+    else if (moves<=recommended+4) stars=1;<br>
+    else stars=0;<br><br>
+
+    state="win";<br><br>
+  }<br>
+}<br><br>
+
+// LEVELS <br>
+// This loads all levels with general foundations, each individual level puts crates, targets and player in specific spots<br>
+function loadLevel() {<br>
+  crates=[]; targets=[]; walls=[];<br>
+  moves=0;<br><br>
+
+  // This creates level 1<br>
+  if (level===1) {<br>
+    recommended=2;<br>
+    player={x:2,y:2};<br><br>
+
+    walls.push({x:1,y:1},{x:2,y:1},{x:3,y:1},{x:4,y:1},{x:5,y:1});<br>
+    walls.push({x:1,y:5},{x:2,y:5},{x:3,y:5},{x:4,y:5},{x:5,y:5});<br>
+    walls.push({x:1,y:2},{x:1,y:3},{x:1,y:4});<br>
+    walls.push({x:5,y:2},{x:5,y:3},{x:5,y:4});<br><br>
+
+    crates.push({x:2,y:3,c:"blue"});<br>
+    crates.push({x:4,y:3,c:"lightblue"});<br><br>
+
+    targets.push({x:2,y:4,c:"blue"});<br>
+    targets.push({x:4,y:4,c:"lightblue"});<br>
+  }<br><br>
+
+// This creates level 2<br>
+if (level===2) {<br>
+  recommended=9;<br>
+  player={x:5,y:5};<br><br>
+
+
+  for (let x=0; x< 10; x++){ <br>
+    for (let y=0; y< 10; y++){<br>
+      walls.push({x:x,y:y});<br>
+    }<br>
+  }<br><br>
+
+  let open = [<br>
+    {x:5,y:2},{x:5,y:3},{x:5,y:4},{x:5,y:5},{x:5,y:6},{x:5,y:7},{x:5,y:8},<br>
+    {x:2,y:5},{x:3,y:5},{x:4,y:5},{x:6,y:5},{x:7,y:5},{x:8,y:5}<br>
+  ];<br><br>
+
+  walls = walls.filter(w => <br>
+    !open.some(o => o.x===w.x && o.y===w.y)<br>
+  );<br><br>
+
+  crates.push({x:5,y:5,c:"blue"});<br>
+  crates.push({x:5,y:4,c:"blue"});<br>
+  crates.push({x:4,y:5,c:"blue"});<br>
+  crates.push({x:6,y:5,c:"blue"});<br><br>
+
+  targets.push({x:5,y:2,c:"blue"});<br>
+  targets.push({x:5,y:8,c:"blue"});<br>
+  targets.push({x:2,y:5,c:"blue"});<br>
+  targets.push({x:8,y:5,c:"blue"});<br>
+}<br><br>
+
+// This creates level 3<br>
+ if (level === 3) {<br>
+  recommended = 12;<br><br>
+
+  walls = [];<br>
+  crates = [];<br>
+  targets = [];<br><br>
+
+//OUTER BORDER <br>
+  for (let x = 1; x <= 8; x++) {<br>
+    walls.push({ x, y: 1 });<br>
+    walls.push({ x, y: 5 });<br>
+  }<br>
+  for (let y = 1; y <= 5; y++) {<br>
+    walls.push({ x: 1, y });<br>
+    walls.push({ x: 8, y });<br>
+  }<br><br>
+
+  walls.push({ x: 4, y: 1 });<br>
+  walls.push({ x: 4, y: 2 });<br>
+  walls.push({ x: 4, y: 4 });<br>
+  walls.push({ x: 4, y: 5 });<br><br>
+
+
+
+  crates.push({ x: 2, y: 3, c: "blue" });<br>
+  crates.push({ x: 7, y: 3, c: "lightblue" });<br><br>
+
+
+  targets.push({ x: 2, y: 4, c: "blue" });<br>
+  targets.push({ x: 7, y: 2, c: "lightblue" })<br><br>
+
+  player = { x: 3, y: 3 };<br><br>
+}
+}
+
+// HELPERS<br>
+// This creates the restart button<br>
+function button(txt,x,y){<br>
+  fill(200);<br>
+  rect(x-80,y-25,160,50);<br>
+  fill(0);<br>
+  text(txt,x,y);<br><br>
+}
+// This makes buttons work<br>
+function over(x,y){<br>
+  return mouseX>x-80&&mouseX< x+80&&mouseY>y-25&&mouseY< y+25;<br>
+}<br>
+</p>
+
+<p> Here you can see the visuals of the code.</p>
+ <iframe src="games/boxedin.html" width="800" height="600" style="border:none;"></iframe>
+
+ <p> ...</p>
+  
+  
+
+
+
+    </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title> Resources</title>
+        <style>
+            .sidenav {
+      height:100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      background-color:pink;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #e75480;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #ca446c
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    span{
+      font-size: 30px;
+      color:#e75480;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+     /* Submenu container */
+.submenu-container {
+  padding-left: 32px;
+}
+
+/* Header row (link + arrow) */
+.submenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* My Projects main link */
+.submenu-main {
+  font-size: 25px;
+  color: #e75480;
+  text-decoration: none;
+  flex: 1;
+  padding: 8px 0;
+}
+
+/* Arrow button */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #e75480;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.submenu-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.submenu-container.active .submenu-toggle::before {
+  transform: rotate(90deg);
+}
+
+/* Submenu links */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.submenu-container.active .submenu {
+  display: block;
+}
+
+
+h1{
+  font-size: 45px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+  text-decoration: underline;
+}
+
+h2{
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+}
+
+p{
+  font-size: 23px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+  text-decoration: none;
+}
+
+ body{
+      background-color: #fff0f3;
+    }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0"
+    }
+    // Toggle submenu when arrow is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger parent link
+      const container = btn.closest(".submenu-container");
+      container.classList.toggle("active");
+    });
+  });
+});
+        </script>
+         <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+
+  <!-- My Projects link with separate arrow -->
+<div class="submenu-container">
+  <div class="submenu-header">
+    <a href="projects.html" class="submenu-main">My Projects</a>
+    <button class="submenu-toggle" aria-label="Toggle submenu"></button>
+  </div>
+  <ul class="submenu">
+    <li><a href="unit1.html">Unit 1</a></li>
+    <li><a href="unit2.html">Unit 2</a></li>
+    <li><a href="unit3.html">Unit 3</a></li>
+    <li><a href="unit4.html">Unit 4</a></li>
+  </ul>
+</div>
+
+  <a href="resources.html">Resources</a>
+  <a href="gaming.html">Gaming Corner</a>
+</div>
+
+  <span onclick="openNav()">☰ Menu</span>
+
+  <h1>Resources</h1>
+
+  <p> This is an overview of the resources I used to guide my learning through this course. These helped me understand new ways to use code, as well as new tags to add complexity to my work. </p>
+  <h1> Website Portfolio</h1>
+
+  <h2> ChatGPT</h2>
+  <p> I used ChatGPT to help work through issues and explain the use of different tags, CSS and JavaScript. </p>
+  <p> This conversation with Chat helped me create the "hero" affect at the top of the home page:
+    <a href="https://chatgpt.com/share/68fa49b9-1ee0-800c-ae69-067c542f2391" target="_blank"> Click here to see my conversation with Chat.</a>
+  </p>
+
+  <p> I used ChatGPT again to help create the submenu within my navigation bar:
+    <a href="https://chatgpt.com/share/690a0f42-d278-800c-8601-b3955030ac10" targer="_blank"> Click here to see my conversation with Chat.</a>
+  </p>
+
+  <p> ChatGPT helped me embed my JavaScript Quiz into my website:
+    <a href="https://chatgpt.com/share/6913ccbe-6cc4-800c-a642-63d65d96dc6a" target="_blank"> Click here to see my conversation with Chat.</a>
+  </p>
+  <h2>W3 Schools</h2>
+  <p> I used W3 Schools to help me curate more typical aspects of my site.</p>
+  <p> I used this site to help align my text within my tables:
+    <a href="https://www.w3schools.com/css/css_table_align.asp" targer="_blank"> Click here to view the source.</a>
+  </p>
+
+  <p> This W3 Schools site helped me create my navigation bar:
+    <a href="https://www.w3schools.com/howto/howto_js_sidenav.asp
+Used ChatGPT for the submenu: https://chatgpt.com/share/690a0f42-d278-800c-8601-b3955030ac10" target="_blank"> Click here to view the source.</a>
+  </p>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

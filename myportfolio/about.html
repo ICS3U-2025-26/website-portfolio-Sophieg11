@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title> About Me Page</title>
+        <style>
+            .sidenav {
+      height:100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      background-color:pink;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #e75480;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #ca446c
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    span{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 30px;
+      color:#e75480;
+    }
+    /* Submenu container */
+.submenu-container {
+  padding-left: 32px;
+}
+
+/* Header row (link + arrow) */
+.submenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* My Projects main link */
+.submenu-main {
+  font-size: 25px;
+  color: #e75480;
+  text-decoration: none;
+  flex: 1;
+  padding: 8px 0;
+}
+
+/* Arrow button */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #e75480;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.submenu-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.submenu-container.active .submenu-toggle::before {
+  transform: rotate(90deg);
+}
+
+/* Submenu links */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.submenu-container.active .submenu {
+  display: block;
+}
+
+  h1,h2,p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ca446c;
+  }
+
+  h1{
+    font-size: 40px;
+  }
+
+  h2{
+    font-size: 30px;
+  }
+
+  p{
+    font-size: 23px;
+    text-align: center;
+  }
+
+  body{
+    background-color: #fff0f3;
+  }
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <script>
+            function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0"
+    }
+    // Toggle submenu when arrow is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger parent link
+      const container = btn.closest(".submenu-container");
+      container.classList.toggle("active");
+    });
+  });
+});
+        </script>
+        <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+
+  <!-- My Projects link with separate arrow -->
+<div class="submenu-container">
+  <div class="submenu-header">
+    <a href="projects.html" class="submenu-main">My Projects</a>
+    <button class="submenu-toggle" aria-label="Toggle submenu"></button>
+  </div>
+  <ul class="submenu">
+    <li><a href="unit1.html">Unit 1</a></li>
+    <li><a href="unit2.html">Unit 2</a></li>
+    <li><a href="unit3.html">Unit 3</a></li>
+    <li><a href="unit4.html">Unit 4</a></li>
+  </ul>
+</div>
+
+  <a href="resources.html">Resources</a>
+  <a href="gaming.html">Gaming Corner</a>
+</div>
+
+  <span onclick="openNav()">☰ Menu</span>
+ <h1>
+  <b>About Me</b>
+ </h1>
+
+ <p>
+  Hi! I'm Sophie Goldman a 16-year-old Computer Science Student at the Bishop Strachan School. I've always been interested in coding and the computer science world, when I was young I'd often code with my dad who works in the tech space. As I've gotten older I've taken more tech related classes, but this is the first time I've learned coding in a greater extent. 
+ </p>
+ <p>
+  On this page, I hope you come to have a greater understanding of who I am as a person, and my interests outside of class and coding. 
+ </p>
+
+ <h2>
+  Camp
+ </h2>
+
+ <img src="media/Untitled-1.jpg" alt="An image of me and some of my cabin at camp, an image of a sunset taken at camp" width="100%">
+ <p>
+  Camp has always been the most important and most influential part of my life. Getting to spend each summer surrounded by my favourite people in my favourite place is something I could never give up. This past summer, I was a CIT (counsilor in training), this meant that I had the oppurtunity to spend time with younger campers at a variety of ages and step into a leadership role in their lives. This experience taught me so much and I try to bring some of these lessons into my every day life, like the importance of genuine kindness, honesty and support.  
+ </p>
+
+ <h2>Other Interests</h2>
+ <p> I've always been very interested in math, I enjoy logical topics and understanding why things work the way they do. This year I began taking physics and it has really captured my interest. I think I may even want to study astro-physics in University. I also really enjoy reading and understanding different stories and narratives. </p>
+
+ 
+
+
+
+    </body>
+</html>

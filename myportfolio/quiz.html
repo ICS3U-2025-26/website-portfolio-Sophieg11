@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Quiz</title>
+  <style>
+    h1{
+      font-size:25px;
+      font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+      color:#ca446c;
+    }
+  </style>
+
+  <script>
+    function startQuiz() {
+      let score = 0;
+      let totalQuestions = 5;
+
+      // Question 1
+      if (confirm("1. The Earth orbits around the Sun.\n\nPress OK=True, Cancel=False")) {
+        alert("Correct!");
+        score++;
+      } else {
+        alert("Wrong!");
+      }
+
+      // Question 2
+      if (confirm("2. JavaScript is the same as Java.\n\nPress OK=True, Cancel=False")) {
+        alert("Wrong!");
+      } else {
+        alert("Correct!");
+        score++;
+      }
+
+      // Question 3
+      if (confirm("3. The capital of France is Berlin.\n\nPress OK=True, Cancel=False")) {
+        alert("Wrong!");
+      } else {
+        alert("Correct!");
+        score++;
+      }
+
+      // Question 4
+      if (confirm("4. Is 5 + 3 = 8?\n\nPress OK=Yes, Cancel=No")) {
+        alert("Correct!");
+        score++;
+      } else {
+        alert("Wrong!");
+      }
+
+      // Question 5
+      if (confirm("5. Is CSS used to style web pages?\n\nPress OK=Yes, Cancel=No")) {
+        alert("Correct!");
+        score++;
+      } else {
+        alert("Wrong!");
+      }
+
+      // Final score
+      alert("You got " + score + "/" + totalQuestions + " correct!");
+    }
+  </script>
+</head>
+
+<body>
+  <h1><em>Simple JavaScript Quiz</em></h1>
+
+  <button onclick="startQuiz()">
+    Start Quiz
+  </button>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sophie Goldman's Projects.</title>
+    <style>
+            .sidenav {
+      height:100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      background-color:pink;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #e75480;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #ca446c
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+   span{
+      font-size: 30px;
+      color:#e75480;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    h1{
+      text-align: center;
+      font-size: 50px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color:#e75480
+    }
+    
+    h2{
+      color: #e75480;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 35px;
+      text-align:center
+    }
+
+    p{
+      font-size: 20px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color:#ca446c;
+    }
+
+    a{
+      font-size: 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: rgb(162, 37, 56);
+
+    }
+    table{
+      border: 1px solid white;
+      width: 75%;
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+
+
+    body{
+      background-color: #fff0f3;
+    }
+
+    td {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color:rgb(162, 37, 56);
+      font-size: 18px;
+      border: 1px solid white;
+      padding: 8px;
+  
+  
+    }
+    /* Submenu container */
+.submenu-container {
+  padding-left: 32px;
+}
+
+/* Header row (link + arrow) */
+.submenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* My Projects main link */
+.submenu-main {
+  font-size: 25px;
+  color: #e75480;
+  text-decoration: none;
+  flex: 1;
+  padding: 8px 0;
+}
+
+/* Arrow button */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #e75480;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.submenu-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.submenu-container.active .submenu-toggle::before {
+  transform: rotate(90deg);
+}
+
+/* Submenu links */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.submenu-container.active .submenu {
+  display: block;
+}
+
+
+
+
+
+  
+   
+
+        </style>
+</head>
+<body>
+
+      <script>
+            function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0"
+    }
+   // Toggle submenu when arrow is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger parent link
+      const container = btn.closest(".submenu-container");
+      container.classList.toggle("active");
+    });
+  });
+});
+        </script>
+         <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+
+  <!-- My Projects link with separate arrow -->
+<div class="submenu-container">
+  <div class="submenu-header">
+    <a href="projects.html" class="submenu-main">My Projects</a>
+    <button class="submenu-toggle" aria-label="Toggle submenu"></button>
+  </div>
+  <ul class="submenu">
+    <li><a href="unit1.html">Unit 1</a></li>
+    <li><a href="unit2.html">Unit 2</a></li>
+    <li><a href="unit3.html">Unit 3</a></li>
+    <li><a href="unit4.html">Unit 4</a></li>
+  </ul>
+</div>
+
+  <a href="resources.html">Resources</a>
+  <a href="gaming.html">Gaming Corner</a>
+</div>
+  <span onclick="openNav()">☰ Menu</span>
+
+     <h1>Projects</h1>
+
+    <h2>Unit 1</h2>
+    <a href="unit1.html" target="_blank"> Introduction to Computer Science</a>
+    <p> This initial unit focuses on the foundational skills used all throughout the Grade 11 Computer Science Course.</p>
+
+    <table>
+      <tr style="background-color: white;">
+        <td><b>Project Name</b></td>
+        <td><b>Date </b></td>
+        <td><b>Project Links</b></td>
+      </tr>
+
+      <tr>
+        <td style="background-color:#ffe2e6;">Introduction to Programming</td>
+          <td style="background-color:#ffe2e6;"> September 5th-9th, 2025</td>
+          <td style="background-color:#ffe2e6;"> <a href="https://docs.google.com/document/d/16lPLYQCrCIR2dHIeBbCaS86yduVymlyy85EhqtTwX4o/edit?tab=t.0#heading=h.a7nivvp8097e" target="_blank"> Project Overview</td>
+      </tr>
+      
+      <tr>
+        <td style="background-color:#ffe2e6;" >PC Build</td>
+        <td style="background-color:#ffe2e6;">September 11th, 2025</td>
+        <td style="background-color:#ffe2e6;"> <a href= "https://docs.google.com/presentation/d/1oYk-A1X3dtV8-joI5YOHamxlnzqjNqPIk3gfyBIUxs4/edit?slide=id.p#slide=id.p" target="_blank"> Resources Used </td>
+      </tr>
+
+      <tr>
+        <td style="background-color:#ffe2e6;">
+          PB & J Sandwich Pseudocode
+        </td>
+        <td style="background-color:#ffe2e6;">September 23rd, 2025</td>
+        <td style="background-color:#ffe2e6;"> N/A</td>
+      </tr>
+
+      <tr>
+        <td style="background-color:#ffe2e6;">
+          Implenting Algorithms
+        </td>
+        <td style="background-color:#ffe2e6;">September 23rd, 2025</td>
+        <td style="background-color:#ffe2e6;"> <a href="https://docs.google.com/document/d/1GBjwT8gpucwpyLlMDK76yHwugMo3uNT492CsWEOX9Es/edit?tab=t.0#heading=h.az2a4gwba9u9" target="_blank"> Project Overview</td>
+      </tr>
+    </table>
+   
+   
+    <p>
+      <h2>Unit 2</h2>
+        <a href="unit2.html" target="_blank">Web Development</a>
+        <p> Unit two focuses on learning key concepts involved in HTML, CSS and JavaScript.</p>
+    </p>
+
+    <table>
+      <tr style="background-color: white;">
+        <td><b> Project Name</b></td>
+        <td><b> Date</b></td>
+        <td><b>Project Links</b></td>
+      </tr>
+
+      <tr>
+        <td style="background-color:#ffe2e6;">Popup Boxes Quiz</td>
+        <td style="background-color:#ffe2e6;">October 9th, 2025</td>
+        <td style="background-color: #ffe2e6;"> N/A</td>
+      </tr>
+      <tr>
+        <td style="background-color:#ffe2e6;">Website Porfolio</td>
+        <td style="background-color:#ffe2e6;"> October 17th - November 11th, 2025</td>
+        <td style="background-color:#ffe2e6;"> <a href="https://docs.google.com/document/d/1mxuP9OZm-Yd9x5yNJafHmeaGmkY_CybAWQs3DYSW5NM/edit?tab=t.on2cgddmeh66" target="_blank"> Project Overview</td>
+      </tr>
+    </table>
+    <p>
+      <h2>Unit 3</h2>
+        <a href="unit3.html" target="_blank"> Introduction to Python</a>
+        <p> This unit expands the coding knowledge learned in unit two, transitioning into python.</p>
+    </p>
+
+    <table>
+      <tr style="background-color: white;">
+        <td><b> Project Name</b></td>
+        <td><b> Date</b></td>
+        <td><b>Project Links</b></td>
+      </tr>
+
+      <tr>
+        <td style="background-color:#ffe2e6;">Code Solutions</td>
+        <td style="background-color:#ffe2e6;"> December 2025 - January 2026</td>
+        <td style="background-color:#ffe2e6;"> <a href="https://www.brianheinold.net/python/python_book.html#chapter_start" target="_blank">Practice Resources</td>
+      </tr>
+      <tr>
+        <td style="background-color:#ffe2e6;">Mad Libs</td>
+        <td style="background-color:#ffe2e6;"> ???</td>
+        <td style="background-color:#ffe2e6;"> <a href="https://docs.google.com/document/d/1D-XY4BNP53ImnPRsOpZURI4JvAFAOkiWnLLkvrpmX-4/edit?tab=t.0#heading=h.xq3d95yab4gg" target="_blank">Project Overview</td>
+      </tr>
+      <tr>
+        <td style="background-color:#ffe2e6;">Table Top Game</td>
+        <td style="background-color:#ffe2e6;"> ???</td>
+        <td style="background-color:#ffe2e6;"> <a href="https://docs.google.com/document/d/1Bkbf6GF2-B-StUW8-BRnxIbWVMFeLStLwCe9t_Bw_mA/edit?tab=t.m2wgssfwtlb5" target="_blank">Project Overview</td>
+      </tr>
+
+    </table>
+      
+    <p>
+      <h2>Unit 4</h2>
+        <a href="unit4.html" target="_blank"> Animations and Game Development</a>
+        <p> Unit four combines all of the programming knowledge developed in order to create games and interactive activites.  </p>
+    </p>
+
+    <table>
+      <tr style="background-color: white;">
+        <td><b> Project Name</b></td>
+        <td><b> Date</b></td>
+        <td><b>Project Links</b></td>
+      </tr>
+
+      <tr>
+        <td style="background-color:#ffe2e6;"> Milestone Tasks</td>
+        <td style="background-color:#ffe2e6;"> ???</td>
+        <td style="background-color:#ffe2e6;"> N/A</td>
+      </tr>
+      <tr>
+        <td style="background-color:#ffe2e6;">Game Tutorial</td>
+        <td style="background-color:#ffe2e6;"> ???</td>
+        <td style="background-color:#ffe2e6;"> <a href="https://docs.google.com/document/d/1D-XY4BNP53ImnPRsOpZURI4JvAFAOkiWnLLkvrpmX-4/edit?tab=t.0#heading=h.xq3d95yab4gg" target="_blank">Project Overview</td>
+      </tr>
+      <tr>
+        <td style="background-color:#ffe2e6;">Boxed In</td>
+        <td style="background-color:#ffe2e6;"> ???</td>
+        <td style="background-color:#ffe2e6;"> <a href="https://docs.google.com/document/d/1Bkbf6GF2-B-StUW8-BRnxIbWVMFeLStLwCe9t_Bw_mA/edit?tab=t.m2wgssfwtlb5" target="_blank">Project Overview</td>
+      </tr>
+    </table>
+       
+
+
+</body>
+</html>

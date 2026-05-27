@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title>Unit 3</title>
+        <style>
+            .sidenav {
+      height:100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      background-color:pink;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #e75480;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #ca446c
+    }
+    
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    span{
+      font-size: 30px;
+      color:#e75480;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+     /* Submenu container */
+.submenu-container {
+  padding-left: 32px;
+}
+
+/* Header row (link + arrow) */
+.submenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* My Projects main link */
+.submenu-main {
+  font-size: 25px;
+  color: #e75480;
+  text-decoration: none;
+  flex: 1;
+  padding: 8px 0;
+}
+
+/* Arrow button */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #e75480;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.submenu-toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.submenu-container.active .submenu-toggle::before {
+  transform: rotate(90deg);
+}
+
+/* Submenu links */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.submenu-container.active .submenu {
+  display: block;
+}
+
+h1{
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+}
+
+h2{
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+}
+h3{
+  font-size: 28px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+  text-align: center;
+}
+p{
+  font-size: 23px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ca446c;
+  text-align: center;
+}
+img{
+  display: block;
+  margin: auto;
+}
+ body{
+      background-color: #fff0f3;
+    }
+    video{
+      display: block;
+      margin: auto;
+    }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0"
+    }
+    // Toggle submenu when arrow is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".submenu-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger parent link
+      const container = btn.closest(".submenu-container");
+      container.classList.toggle("active");
+    });
+  });
+});
+        </script>
+        <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+
+  <!-- My Projects link with separate arrow -->
+<div class="submenu-container">
+  <div class="submenu-header">
+    <a href="projects.html" class="submenu-main">My Projects</a>
+    <button class="submenu-toggle" aria-label="Toggle submenu"></button>
+  </div>
+  <ul class="submenu">
+    <li><a href="unit1.html">Unit 1</a></li>
+    <li><a href="unit2.html">Unit 2</a></li>
+    <li><a href="unit3.html">Unit 3</a></li>
+    <li><a href="unit4.html">Unit 4</a></li>
+  </ul>
+</div>
+
+  <a href="resources.html">Resources</a>
+  <a href="gaming.html">Gaming Corner</a>
+</div>
+
+  <span onclick="openNav()">☰ Menu</span>
+
+  <h1> Unit 3 - Introduction to Python</h1>
+  
+  <h2>Code Solutions</h2>
+  <p> In this unit we focused on understanding five main programming concepts. Below you'll find an example of each and what I learned.</p> 
+  <h3> 1. Input, Output, and Variables. </h3>
+
+<img src="media/input-output-variables.png" width="80%" alt="An image of my input, output, and variables code.">
+<p> This problem taught me how to store user inputs in variables, how to use those variables to perform mathematical concepts, and then display the results in a logical sentence using f-strings. </p>
+<h3> 2. For Loops, Math, and Random Numbers. </h3>
+<img src="media/ForLoops-Math-RandomNumbers.png" width="80%" alt="An image of my for loops, math, and random numbers code.">
+<p> This code developed my understanding of using user input. Additionally, it taught me how to use for loops. In this example, I applied a for loop to create a repetitive process (printing the stars), that changed based on location (height). </p>
+<h3> 3. If-Statements and While Loops. </h3>
+<img src="media/IfStatements-WhileLoops.png" width="80%" alt="An image of my if-statements and while loops code.">
+<p> This sample problem taught me how to use white loops and if statements to create a coin flip game for users. The while loop encompasses the entirety of the game as it ensures that the user is in budget. The if-statement checks for accuracy. </p>
+<h3> 4. Strings and Lists.</h3>
+<img src="media/Strings-Lists.png" width="80%" alt="An image of my strings and lists code.">
+<p>These practices taught me how to alter text in a variety of different ways. This would become helpful in <b>Madlibs</b> project later in the unit. </p>
+<h3> 5. Custom Functions.</h3>
+<img src="media/Custom-Functions.png" width="80%" alt="An image of my custom functions code.">
+<p>This code taught me how to create functions that I can then integrate into code and use along side user input, if statements, variables, and more. </p>
+
+ <h2>Mad Libs Project</h2>
+ <p>In the Mad Libs project I used a combination of the skills I learned above to fill in a Mad Libs of the BSS anthem.</p> 
+ <video controls width="80%">
+  <source src="media/madlibs.mp4" type="video/mp4">
+</video>
+
+<h2>Table Top Game</h2>
+<p>In the Table Top Game Project my partner and I made a game similar to snakes and ladders called Churro Climbs and Chocolate Slides.</p> 
+ <video controls width="80%">
+  <source src="media/table-top.mp4" type="video/mp4">
+</video>
+
+
+    </body>
+</html>
